@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="//bizweb.dktcdn.net/100/480/632/themes/900313/assets/favicon.png?1712897547805" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Sudes Phone</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* CSS cho nút "Trở về phía trên" */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: red;
+        color: white;
+        border: none;
+        
+        border-radius: 50%; /* Làm cho nút tròn */
+        cursor: pointer;
+        display: none; /* Ẩn nút ban đầu */
+        opacity: 0.7;
+        width: 50px; /* Đặt kích thước cho nút */
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .back-to-top:hover {
+        background-color: red;
+        opacity: 1;
+      }
+
+      .bi-arrow-up-circle {
+        font-size: 1.5rem; /* Thay đổi kích thước icon */
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <button class="back-to-top" onclick="scrollToTop()">
+      <i class="bi bi-chevron-up"></i>
+    </button>
+    <script>
+      // JavaScript để điều khiển sự xuất hiện của nút và cuộn trang lên trên
+      window.addEventListener('scroll', function () {
+        const button = document.querySelector('.back-to-top');
+        if (window.scrollY > 300) {
+          button.style.display = 'block';
+        } else {
+          button.style.display = 'none';
+        }
+      });
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
